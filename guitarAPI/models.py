@@ -1,3 +1,20 @@
 from django.db import models
 
-# Create your models here.
+class Guitar(models.Model):
+    name = models.TextField()
+    description = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'guitar'
+
+
+class User(models.Model):
+    login = models.TextField()
+    password = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'user'
+
+

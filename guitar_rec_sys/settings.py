@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'guitar_rec_sys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'guitarRSDB',
+        'NAME': 'myguitar',
         'USER': 'postgres',
         'PASSWORD': '54484413310',
         'HOST': 'localhost',
