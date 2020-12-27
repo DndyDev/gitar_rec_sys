@@ -2,9 +2,9 @@
     <div class="container">
         <h1>Рекомендательная система по подбору гитары</h1>
         <div class="row">
-<!--            ToDo реализовать isRegistration-->
-            <CardRegistration v-show="isRegistration"></CardRegistration>
-            <CardQuestion></CardQuestion>
+<!--            <CardRegistration v-show="isRegistration"></CardRegistration>-->
+            <CardQuestion ></CardQuestion>
+            <CardGuitar v-show="isGuitar === true"></CardGuitar>
         </div>
 
     </div>
@@ -13,15 +13,30 @@
 <script>
     import CardQuestion from "@/components/CardQuestion";
     import CardRegistration from "@/components/CardRegistration";
+    import CardGuitar from "../components/CardGuitar";
 
     export default {
         name: "RecommendedSystem",
         components: {
             CardRegistration,
-            CardQuestion
+            CardQuestion,
+            CardGuitar,
+        },
+        data: function() {
+          return{
+              CQ:CardQuestion,
+          }
         },
         methods:{
+            isQuestion() {
 
+            },
+            isGuitar() {
+                console.log(i)
+                return this.CQ.i >= 2
+
+
+            },
         }
     }
     // var slider = document.getElementById('test-slider')

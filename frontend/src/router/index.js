@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import GuitarEdit from "../components/GuitarEdit";
+
 
 Vue.use(VueRouter)
 
@@ -10,16 +12,17 @@ const routes = [
     name: 'Home',
     component: Home
   },
+
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
-  {path: '/reg', component:() => import('./components/CardRegistration.vue') },
-  {path: '/rec_sys', component:() => import('./views/RecommendedSystem.vue') },
+  {path: '/reg', component:() => import('../components/CardRegistration.vue') },
+  {path: '/questions', component:() => import('../views/RecommendedSystem.vue') },
+  {path:'/guitar', component:() => import('../components/GuitarList.vue')},
+  {path:'/guitar/:id', name:'edit',component: () => import('../components/GuitarEdit')},
+
 ]
 
 const router = new VueRouter({

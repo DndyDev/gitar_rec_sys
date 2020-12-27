@@ -1,40 +1,42 @@
 <template>
     <div class="CardRegistration">
-    <div class="row">
-        <div class="col s12 m10 l5 offset-l3">
-            <div class="card" >
-                <div class="card-image">
-                    <img :src="guitargif" >
-                    <span class="card-title">Подбор гитары</span>
-                </div>
-                <div class="card-content" >
-                    <p>{{text}}</p>
-                </div>
-                <div class="card-action">
-                    <div class="row">
-                        <div class="input-field col s3">
-                            <input v-model="f_name" id="first_name" type="text" class="validate ">
-                            <label for="first_name" class="">Имя</label>
-                        </div>
-
-                        <div class="input-field col s3">
-                            <input v-model="l_name" id="last_name" type="text" class="validate">
-                            <label for="last_name" class="">Фамилия</label>
-                        </div>
+     <div class="container">
+        <div class="row">
+            <div class="col s12 m7 l5 offset-l3">
+                <div class="card" >
+                    <div class="card-image">
+                        <img :src="guitargif" >
+                        <span class="card-title">Подбор гитары</span>
+                    </div>
+                    <div class="card-content" >
+                        <p>{{text}}</p>
+                    </div>
+                    <div class="card-action">
                         <div class="row">
-<!--                            TODO Проход по постa условию-->
-                            <button class="btn waves-effect waves-light col s6 offset-s1 "  type="submit"
-                                    name="action"  @click="addUser" >
-                                Подобрать
-                                <i class="material-icons right">send</i>
+                            <div class="input-field col s3">
+                                <input v-model="f_name" id="first_name" type="text" class="validate ">
+                                <label for="first_name" class="">Имя</label>
+                            </div>
 
-                            </button>
+                            <div class="input-field col s3">
+                                <input v-model="l_name" id="last_name" type="text" class="validate">
+                                <label for="last_name" class="">Фамилия</label>
+                            </div>
+                            <div class="row">
+    <!--                            TODO Проход по постa условию-->
+                                <button class="btn waves-effect waves-light col s6 offset-s1 "  type="submit"
+                                        name="action"  @click="addUser" >
+                                    Подобрать
+                                    <i class="material-icons right">send</i>
+
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+     </div>
     </div>
 </template>
 

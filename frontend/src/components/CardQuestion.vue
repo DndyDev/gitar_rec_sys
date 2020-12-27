@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-        <CardGuitar></CardGuitar>
+
     </div>
 </template>
 
@@ -41,6 +41,7 @@
                 CG:CardGuitar,
                 sum:0,
                 i:0,
+                clicks:0,
                 q_sum: "Предполагаемая сумма",
                 questions:[
                     {
@@ -76,12 +77,14 @@
             //TODO сделать обход незначащего поля
 
             getQuestion() {
+                // while (this.i < 2){this.i++}
                 this.i++
+                this.cur_text = this.questions[this.i].text
                 this.cur_question = this.questions[this.i].question
+                // console.log(1)
                 // this.cur_answer = this.questions[this.i].answers
                 // this.cur_answer = this.key.answer
-                this.CG.methods.getGuitar()
-                this.cur_text = this.questions[this.i].text
+                // this.CG.methods.getGuitar()
 
 
 

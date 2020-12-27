@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from guitarAPI.urls import guitar_api_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-#     path('api/', include('guitarAPI/urls.py'))
+    # path('admin/', admin.site.urls),
+    path('api/', include(guitar_api_patterns))
 ]

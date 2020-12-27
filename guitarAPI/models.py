@@ -1,7 +1,9 @@
 from django.db import models
 
 class Guitar(models.Model):
+
     name = models.TextField()
+    url = models.TextField()
     description = models.TextField()
 
     class Meta:
