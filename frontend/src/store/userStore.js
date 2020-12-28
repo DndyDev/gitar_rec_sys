@@ -1,37 +1,31 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
-import GuitarAPI from '../api';
+import Vuex from 'vuex'
+import UserAPI from '../api'
+import GuitarAPI from "../api";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    guitars: [],
-    alertText: ""
-  },
-  getters: {
+    state:{
+        users:[],
+        alertText:""
+    },
+    getters:{
 
-  },
-  mutations: {
-    'SET_GUITARS'(state, guitars) {
-      state.guitars = guitars;
     },
-    'SET_ALERT_TEXT'(state, alertText) {
-      state.alertText = alertText;
+    mutations: {
+        'SET_USERS'(state,users){
+            state.users = users;
+        },
+        'SET_ALLERT_TEXT'(state,alertText){
+            state.alertText = alertText;
+        },
+        'ADD_USER'(state,user){
+            state.users.push(user);
+        },
+
     },
-    'ADD_GUITAR'(state, guitar) {
-      state.guitars.push(guitar);
-    },
-    'EDIT_GUITAR'(state, guitar) {
-      const item = state.guitars.find(item => item.id === guitar.id);
-      Object.assign(item, guitar);
-    },
-    'REMOVE_GUITAR'(state, guitar) {
-      const index = state.guitars.findIndex(item => item.id === guitar.id);
-      state.guitars.splice(index, 1);
-    }
-  },
-  actions: {
+    actions: {
     async initialize(context) {
       try {
         const response = await GuitarAPI.guitar.getAll();
@@ -65,4 +59,4 @@ export default new Vuex.Store({
       }
     }
   }
-});
+})
