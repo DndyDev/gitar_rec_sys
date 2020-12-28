@@ -3,8 +3,8 @@
         <h1>Рекомендательная система по подбору гитары</h1>
         <div class="row">
 <!--            <CardRegistration v-show="isRegistration"></CardRegistration>-->
-            <CardQuestion ></CardQuestion>
-            <CardGuitar v-show="isGuitar === true"></CardGuitar>
+<!--            <CardQuestion ></CardQuestion>-->
+            <CardGuitar ></CardGuitar>
         </div>
 
     </div>

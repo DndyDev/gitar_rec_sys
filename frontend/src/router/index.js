@@ -22,6 +22,7 @@ const routes = [
   {path: '/questions', component:() => import('../views/RecommendedSystem.vue') },
   {path:'/guitar', component:() => import('../components/GuitarList.vue')},
   {path:'/guitar/:id', name:'edit',component: () => import('../components/GuitarEdit')},
+  {path:'/guitar/map', name:'map',component: () => import('../../public/guitarMap.html')},
 
 ]
 

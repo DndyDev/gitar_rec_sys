@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'myguitar',
         'USER': 'postgres',
-        'PASSWORD': '54484413310',
+        'PASSWORD': '123456789',
         'HOST': 'localhost',
         'PORT': '2002'
     }

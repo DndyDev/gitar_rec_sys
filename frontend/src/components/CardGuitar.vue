@@ -1,15 +1,15 @@
 <template>
     <div class="card  col s6 m6 l6">
         <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" :src="guitars[i].image">
+            <img class="activator" :src="guitars[1].image">
         </div>
         <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><p>{{guitars[i].model}}</p>
+            <span class="card-title activator grey-text text-darken-4"><p>{{guitars[1].model}}</p>
                 <i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><p>{{guitars[i].model}}</p><i class="material-icons right">close</i></span>
-            <p>{{guitars[i].description}}</p>
+            <span class="card-title grey-text text-darken-4"><p>{{guitars[1].model}}</p><i class="material-icons right">close</i></span>
+            <p>{{guitars[1].description}}</p>
         </div>
     </div>
 </template>
@@ -22,6 +22,7 @@
     import master from '@/assets/guitars/rose_st.jpg'
     import gibson from '@/assets/guitars/gibson_lp_studio.jpg'
     import acustic from"@/assets/guitars/sevillica_iw_235_na.jpg"
+    import {mapState} from 'vuex'
     export default {
         name: "CardGuitar",
         data: function (){
@@ -54,6 +55,11 @@
                         "Гриф\tдерево Нато"},
             ]
         }
+        },
+        computed:{
+            ...mapState({
+                guitars:state => state.guitars
+            })
         },
         methods:{
             getGuitar(){
